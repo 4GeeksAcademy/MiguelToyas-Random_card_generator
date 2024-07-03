@@ -1,1 +1,35 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+#naipe {
+  width: 420px;
+  height: 640px;
+  display: flex;
+  flex-direction: column; /* Asegura que los hijos se apilen verticalmente */
+  font-size: 100%;
+  background-color: white;
+  border-radius: 4%;
+}
+
+#numero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+#textoNumero {
+  font-size: calc(6vh + 6vw); /* Tamaño de fuente dinámico */
+  margin: 0;
+}
+
+#paloAbajo {
+  transform: rotate(180deg); /* Rota el contenido 180 grados */
+}
+
+#paloArriba img,
+#paloAbajo img {
+  max-height: 60%; /* La imagen no debe exceder la altura del contenedor */
+  max-width: 60%; /* La imagen no debe exceder el ancho del contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+  width: auto; /* Mantener la proporción de la imagen */
+}

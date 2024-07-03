@@ -3,26 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Random Card Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #principal {
+        background-image: url("src/images/Tapete_Poker_Fieltro_140-90_verde.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div
+      id="principal"
+      class="container-fluid d-flex justify-content-center align-items-center vh-100 mx-auto"
+    >
+      <div id="naipe">
+        <div
+          id="paloArriba"
+          class="d-flex justify-content-start align-items-center h-25 ms-4"
+        >
+          <img src="src/images/spades.jpg" alt="Suit of the card" />
+        </div>
+        <div
+          id="numero"
+          class="d-flex justify-content-center align-items-center h-50"
+        >
+          <h2 id="textoNumero">10</h2>
+        </div>
+        <div
+          id="paloAbajo"
+          class="d-flex justify-content-start align-items-center h-25 me-4"
+        >
+          <img src="src/images/spades.jpg" alt="Suit of the card" />
+        </div>
       </div>
     </div>
   </body>
