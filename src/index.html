@@ -22,14 +22,14 @@
   <body>
     <div
       id="principal"
-      class="container-fluid d-flex justify-content-center align-items-center vh-100 mx-auto"
+      class="container-fluid d-flex justify-content-center align-items-center flex-column vh-100 mx-auto"
     >
       <div id="naipe">
         <div
           id="paloArriba"
           class="d-flex justify-content-start align-items-center h-25 ms-4"
         >
-          <img src="src/images/spades.jpg" alt="Suit of the card" />
+          <img src="src/images/spades.jpg" alt="Suit of the card" id="suitUp" />
         </div>
         <div
           id="numero"
@@ -41,8 +41,17 @@
           id="paloAbajo"
           class="d-flex justify-content-start align-items-center h-25 me-4"
         >
-          <img src="src/images/spades.jpg" alt="Suit of the card" />
+          <img
+            src="src/images/spades.jpg"
+            alt="Suit of the card"
+            id="suitDown"
+          />
         </div>
+      </div>
+      <div class="my-5">
+        <button type="button" class="btn btn-warning" id="button">
+          Warning
+        </button>
       </div>
     </div>
   </body>
