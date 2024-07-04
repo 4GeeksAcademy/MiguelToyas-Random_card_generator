@@ -8,7 +8,7 @@
   font-size: 100%;
   background-color: white;
   border-radius: 4%;
-  margin: 0 auto;
+  position: relative;
 }
 
 #numero {
@@ -35,25 +35,14 @@
   width: auto;
 }
 
-#controlsContainer {
-  width: 100%;
-}
-
-#widthRange {
-  width: 300px;
-}
-
-#heightRangeContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.resize-handle {
+  width: auto;
+  height: auto;
+  color: white;
+  font-size: 150%;
   position: absolute;
-  right: 20px;
-  height: 100%;
-  transform: rotate(90deg);
-}
-
-#heightRange {
-  width: 300px;
-  margin: 0;
+  right: -30px;
+  bottom: -30px;
+  cursor: se-resize;
+  padding: 2px 4px;
 }

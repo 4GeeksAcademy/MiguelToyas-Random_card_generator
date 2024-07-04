@@ -1,4 +1,3 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
 
@@ -28,29 +27,21 @@ const cardSuits = [
 // Encontrar elementos en el DOM
 const naipe = document.getElementById("naipe");
 const number = document.getElementById("textoNumero");
-const numberText = document.getElementById("textoNumero");
 const suitUp = document.getElementById("suitUp");
 const suitDown = document.getElementById("suitDown");
-const widthRange = document.getElementById("widthRange");
-const heightRange = document.getElementById("heightRange");
-const widthValue = document.getElementById("widthValue");
-const heightValue = document.getElementById("heightValue");
 
 // Función para ajustar el tamaño de fuente
 const adjustTextSize = () => {
   const naipeWidth = naipe.offsetWidth;
   const naipeHeight = naipe.offsetHeight;
 
-  // Calcular tamaño de fuente basado en las dimensiones de naipe
-  const fontSize = Math.min(naipeWidth, naipeHeight) / 2; // Ajusta el factor según necesites
+  const fontSize = Math.min(naipeWidth, naipeHeight) / 2;
 
-  numberText.style.fontSize = `${fontSize}px`;
+  number.style.fontSize = `${fontSize}px`;
 };
 
-// Llamar a la función inicialmente y en el resize del navegador
 adjustTextSize();
 window.addEventListener("resize", adjustTextSize);
-naipe.addEventListener("change", adjustTextSize);
 
 // Generar una carta aleatoria
 const obtainRandomElement = arr => arr[Math.floor(Math.random() * arr.length)];
@@ -80,18 +71,29 @@ window.onload = () => {
 document.getElementById("button").addEventListener("click", generateRandomCard);
 
 // Ajustar dimensión de la carta
-const actualizarDimensiones = () => {
-  const newWidth = widthRange.value;
-  const newHeight = heightRange.value;
+const resizeHandle = document.getElementById("resize-handle");
+let isResizing = false;
 
-  naipe.style.width = `${newWidth}px`;
-  naipe.style.height = `${newHeight}px`;
+resizeHandle.addEventListener("mousedown", e => {
+  isResizing = true;
+  document.addEventListener("mousemove", resize);
+  document.addEventListener("mouseup", stopResize);
+});
 
-  widthValue.textContent = newWidth + "px";
-  heightValue.textContent = newHeight + "px";
+function resize(e) {
+  if (isResizing) {
+    const newWidth = e.clientX - naipe.offsetLeft;
+    const newHeight = e.clientY - naipe.offsetTop;
 
-  adjustTextSize();
-};
+    naipe.style.width = `${newWidth}px`;
+    naipe.style.height = `${newHeight}px`;
 
-widthRange.addEventListener("input", actualizarDimensiones);
-heightRange.addEventListener("input", actualizarDimensiones);
+    adjustTextSize();
+  }
+}
+
+function stopResize() {
+  isResizing = false;
+  document.removeEventListener("mousemove", resize);
+  document.removeEventListener("mouseup", stopResize);
+}
