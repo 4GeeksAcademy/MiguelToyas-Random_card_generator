@@ -4,10 +4,11 @@
   width: 420px;
   height: 640px;
   display: flex;
-  flex-direction: column; /* Asegura que los hijos se apilen verticalmente */
+  flex-direction: column;
   font-size: 100%;
   background-color: white;
   border-radius: 4%;
+  margin: 0 auto;
 }
 
 #numero {
@@ -18,18 +19,41 @@
 }
 
 #textoNumero {
-  font-size: calc(6vh + 6vw); /* Tamaño de fuente dinámico */
+  font-size: calc(6vh + 6vw);
   margin: 0;
 }
 
 #paloAbajo {
-  transform: rotate(180deg); /* Rota el contenido 180 grados */
+  transform: rotate(180deg);
 }
 
 #paloArriba img,
 #paloAbajo img {
-  max-height: 60%; /* La imagen no debe exceder la altura del contenedor */
-  max-width: 60%; /* La imagen no debe exceder el ancho del contenedor */
-  height: auto; /* Mantener la proporción de la imagen */
-  width: auto; /* Mantener la proporción de la imagen */
+  max-height: 60%;
+  max-width: 60%;
+  height: auto;
+  width: auto;
+}
+
+#controlsContainer {
+  width: 100%;
+}
+
+#widthRange {
+  width: 300px;
+}
+
+#heightRangeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 20px;
+  height: 100%;
+  transform: rotate(90deg);
+}
+
+#heightRange {
+  width: 300px;
+  margin: 0;
 }

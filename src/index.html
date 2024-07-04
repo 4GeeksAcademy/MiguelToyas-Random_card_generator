@@ -12,25 +12,25 @@
     />
     <link rel="stylesheet" href="style.css" />
     <style>
-      #principal {
+      body {
         background-image: url("src/images/Tapete_Poker_Fieltro_140-90_verde.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-color: red;
       }
     </style>
   </head>
   <body>
     <div
       id="principal"
-      class="container-fluid d-flex justify-content-center align-items-center flex-column vh-100 mx-auto"
+      class="container-fluid d-flex justify-content-center align-items-center h-auto flex-column mx-auto p-0 mt-5"
     >
       <div
-        class="container d-flex justify-content-center align-items-center flex-column"
+        class="d-flex flex-column align-items-center mb-3"
+        id="controlsContainer"
       >
-        <div
-          class="container d-flex justify-content-center align-items-center col-8"
-        >
-          <label for="widthRange">Width: </label>
+        <div class="d-flex justify-content-center align-items-center mb-3">
+          <label for="widthRange" class="me-2">Width:</label>
           <input
             type="range"
             id="widthRange"
@@ -38,49 +38,55 @@
             max="1500"
             value="420"
           />
-          <span id="widthValue">420</span>px
-        </div>
-        <div
-          class="container d-flex justify-content-center align-items-center col-8"
-        >
-          <label for="heightRange">Height: </label>
-          <input
-            type="range"
-            id="heightRange"
-            min="100"
-            max="1000"
-            value="640"
-          />
-          <span id="heightValue">640</span>px
+          <span id="widthValue" class="ms-2">420px</span>
         </div>
       </div>
-      <div id="naipe">
-        <div
-          id="paloArriba"
-          class="d-flex justify-content-start align-items-center h-25 ms-4"
-        >
-          <img src="src/images/spades.jpg" alt="Suit of the card" id="suitUp" />
-        </div>
-        <div
-          id="numero"
-          class="d-flex justify-content-center align-items-center h-50"
-        >
-          <h2 id="textoNumero">10</h2>
-        </div>
-        <div
-          id="paloAbajo"
-          class="d-flex justify-content-start align-items-center h-25 me-4"
-        >
-          <img
-            src="src/images/spades.jpg"
-            alt="Suit of the card"
-            id="suitDown"
-          />
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div id="naipe" class="bg-light">
+            <div
+              id="paloArriba"
+              class="d-flex justify-content-start align-items-center h-25 ms-4"
+            >
+              <img
+                src="src/images/spades.jpg"
+                alt="Suit of the card"
+                id="suitUp"
+              />
+            </div>
+            <div
+              id="numero"
+              class="d-flex justify-content-center align-items-center h-50"
+            >
+              <h2 id="textoNumero">10</h2>
+            </div>
+            <div
+              id="paloAbajo"
+              class="d-flex justify-content-start align-items-center h-25 me-4"
+            >
+              <img
+                src="src/images/spades.jpg"
+                alt="Suit of the card"
+                id="suitDown"
+              />
+            </div>
+          </div>
+          <div id="heightRangeContainer">
+            <label for="heightRange">Height: </label>
+            <input
+              type="range"
+              id="heightRange"
+              min="100"
+              max="1000"
+              value="640"
+            />
+            <span id="heightValue">640</span>px
+          </div>
         </div>
       </div>
       <div class="my-5">
         <button type="button" class="btn btn-warning" id="button">
-          Warning
+          Generate New Card
         </button>
       </div>
     </div>
