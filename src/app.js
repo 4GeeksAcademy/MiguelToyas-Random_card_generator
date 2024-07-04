@@ -31,6 +31,10 @@ const number = document.getElementById("textoNumero");
 const numberText = document.getElementById("textoNumero");
 const suitUp = document.getElementById("suitUp");
 const suitDown = document.getElementById("suitDown");
+const widthRange = document.getElementById("widthRange");
+const heightRange = document.getElementById("heightRange");
+const widthValue = document.getElementById("widthValue");
+const heightValue = document.getElementById("heightValue");
 
 // Función para ajustar el tamaño de fuente
 const adjustTextSize = () => {
@@ -74,3 +78,20 @@ window.onload = () => {
 };
 
 document.getElementById("button").addEventListener("click", generateRandomCard);
+
+// Ajustar dimensión de la carta
+const actualizarDimensiones = () => {
+  const newWidth = widthRange.value;
+  const newHeight = heightRange.value;
+
+  naipe.style.width = `${newWidth}px`;
+  naipe.style.height = `${newHeight}px`;
+
+  widthValue.textContent = newWidth + "px";
+  heightValue.textContent = newHeight + "px";
+
+  adjustTextSize();
+};
+
+widthRange.addEventListener("input", actualizarDimensiones);
+heightRange.addEventListener("input", actualizarDimensiones);
