@@ -97,3 +97,7 @@ function stopResize() {
   document.removeEventListener("mousemove", resize);
   document.removeEventListener("mouseup", stopResize);
 }
+
+// Fijamos el intervalo en 10 segundos:
+
+const intervalID = setInterval(generateRandomCard, 10000);
